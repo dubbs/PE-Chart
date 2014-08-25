@@ -220,6 +220,12 @@ var PEChart = (function ($, baseConfig, userConfig) {
     return options;
   };
 
+  PEChart.prototype.loadYAxisTickInterval = function (options) {
+    options.yAxis = options.yAxis || {};
+    options.yAxis.max = this.$el.attr('data-yaxis-interval');
+    return options;
+  };
+
   PEChart.prototype.loadChartTitle = function(options) {
     options.title = options.title || {};
     options.title.text = this.$el.find('[data-chart-title]').text();
